@@ -10,5 +10,4 @@ fn main() {
         1 => day1::run(),
         _ => panic!("This day is not yet implemented"),
     }
-    
 }
