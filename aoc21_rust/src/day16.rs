@@ -57,7 +57,6 @@ impl Packet {
             let value = i128::from_str_radix(&value.join(""), 2).unwrap();
             let l = Litteral {
                 version: version,
-                type_id: type_id,
                 value: value,
                 length: i - index,
             };
@@ -91,8 +90,6 @@ impl Packet {
             }
             let mut o = Operator {
                 version: version + version_sum,
-                type_id: type_id,
-                operator_mode: false,
                 value: 0,
                 length: i - index,
             };
@@ -166,15 +163,12 @@ impl Packet {
 
 struct Operator {
     version: i128,
-    type_id: i128,
-    operator_mode: bool,
     value: i128,
     length: usize,
 }
 
 struct Litteral {
     version: i128,
-    type_id: i128,
     value: i128,
     length: usize,
 }
