@@ -1,4 +1,5 @@
 mod day1;
+mod day2;
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -8,6 +9,7 @@ fn main() {
     let day: i32 = args[1].parse().expect("Must supply which day to run");
     match day {
         1 => day1::run(),
+        2 => day2::run(),
         _ => panic!("This day is not yet implemented"),
     }
 }
